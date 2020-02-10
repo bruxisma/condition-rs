@@ -1,0 +1,15 @@
+[package]
+name = "condition"
+version = "0.1.0"
+authors = ["Isabella Muerte"]
+edition = "2018"
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/slurps-mad-rips/condition-rs"
+description = "Commonly used synonyms for true and false"
+keywords = ["bool", "condition", "toggle"]
+
+[dependencies]
+condition-derive = { path = "condition-derive", version = "0.1.0" }
+
+[workspace]

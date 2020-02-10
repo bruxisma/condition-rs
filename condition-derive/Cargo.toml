@@ -3,6 +3,8 @@ name = "condition-derive"
 version = "0.1.0"
 authors = ["Isabella Muerte"]
 edition = "2018"
+license = "MIT"
+description = "custom derive macro for condition crate"
 
 [lib]
 proc-macro = true

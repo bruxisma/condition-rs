@@ -42,13 +42,17 @@ pub trait Condition: Sized {
   /// these terms
   fn is(&self, value: bool) -> bool;
 
+  /// Alias function for `self.is(false)`
   #[inline]
   fn is_false (&self) -> bool { self.is(false) }
+  /// Alias function for `self.is(true)`
   #[inline]
   fn is_true (&self) -> bool { self.is(true) }
 
+  /// Returns `Some(())` if `self.is_true()`, otherwise returns `None`
   #[must_use]
   fn option (&self) -> Option<()> { if self.is(true) { Some(()) } else { None } }
+  /// Returns `Ok(())` if `self.is_true()`, otherwise returns `Err(())`
   #[must_use]
   fn result (&self) -> Result<(), ()> { self.option().ok_or(()) }
 }
@@ -79,6 +83,7 @@ pub mod prelude {
   pub use crate::Condition;
 }
 
+#[doc(hidden)]
 #[cfg(test)]
 mod test {
   use super::prelude::*;
